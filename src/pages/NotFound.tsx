@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { NeonButton } from "@/components/ui/neon-button";
 
 const NotFound = () => {
   const location = useLocation();
@@ -12,13 +13,30 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">404</h1>
-        <p className="text-xl text-gray-600 mb-4">Oops! Page not found</p>
-        <a href="/" className="text-blue-500 hover:text-blue-700 underline">
-          Return to Home
-        </a>
+    <div className="min-h-screen flex items-center justify-center bg-background">
+      <div className="text-center space-y-8 max-w-md mx-auto px-grid-gutter">
+        
+        {/* Giant 404 */}
+        <div className="text-[8rem] font-anton text-primary/20 leading-none">
+          404
+        </div>
+        
+        {/* Content */}
+        <div className="space-y-4">
+          <h1 className="text-2xl font-anton text-foreground">
+            Page Not Found
+          </h1>
+          <p className="text-muted-foreground">
+            The page you're looking for doesn't exist or has been moved.
+          </p>
+        </div>
+        
+        {/* CTA */}
+        <NeonButton asChild>
+          <a href="/">
+            Return to Home
+          </a>
+        </NeonButton>
       </div>
     </div>
   );

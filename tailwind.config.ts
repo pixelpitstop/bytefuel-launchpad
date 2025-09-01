@@ -18,6 +18,11 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'anton': ['Anton', 'sans-serif'],
+				'inter': ['Inter', 'sans-serif'],
+				'mono': ['IBM Plex Mono', 'monospace'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -52,16 +57,14 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
-				}
+				// Brand colors
+				base: 'hsl(var(--base))',
+				graphite: 'hsl(var(--graphite))',
+				ink: 'hsl(var(--ink))',
+				lime: 'hsl(var(--lime))',
+				red: 'hsl(var(--red))',
+				mint: 'hsl(var(--mint))',
+				off: 'hsl(var(--off))'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +87,57 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					'0%': { 
+						opacity: '0',
+						transform: 'translateY(20px)'
+					},
+					'100%': { 
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'glow-pulse': {
+					'0%, 100%': { 
+						boxShadow: '0 0 0.75rem hsl(var(--lime) / 0.45)'
+					},
+					'50%': { 
+						boxShadow: '0 0 1.5rem hsl(var(--lime) / 0.8)'
+					}
+				},
+				'magnetic-pull': {
+					'0%': { 
+						transform: 'translateY(0)'
+					},
+					'100%': { 
+						transform: 'translateY(-2px)'
+					}
+				},
+				'bottle-float': {
+					'0%, 100%': { 
+						transform: 'translateY(0) rotate(0deg)'
+					},
+					'50%': { 
+						transform: 'translateY(-8px) rotate(1deg)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.6s ease-out',
+				'glow-pulse': 'glow-pulse 2s ease-in-out infinite',
+				'magnetic-pull': 'magnetic-pull 0.3s ease-out',
+				'bottle-float': 'bottle-float 3s ease-in-out infinite'
+			},
+			maxWidth: {
+				'container': '1320px'
+			},
+			spacing: {
+				'section-mobile': 'var(--space-section-mobile)',
+				'section-desktop': 'var(--space-section-desktop)',
+				'grid-gutter': 'var(--space-grid-gutter)'
 			}
 		}
 	},
